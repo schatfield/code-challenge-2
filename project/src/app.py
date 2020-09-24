@@ -4,26 +4,44 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask import Flask, request, jsonify
 import json
-from . import create_app
-from .models import BudgetItem, BudgetItemSchema
+from config import user, password, host, database ,port, DATABASE_CONNECTION_URI
 
-# def create_app():
-#     flask_app = Flask(__name__)
-#     flask_app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_CONNECTION_URI
-#     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#     flask_app.app_context().push()
-#     db.init_app(flask_app)
-#     db.create_all()
-#     return flask_app
 
-app = create_app()
+# CREATE APP
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_CONNECTION_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.app_context().push()
+
+
+# INIT DB
+db = SQLAlchemy(app)
+db.init_app(app)
+db.create_all()
+
+
+# CLASS/MODEL
+class BudgetItem(db.Model):
+    __tablename__ = "budget item"
+
+    id = db.Column(db.Integer, primary_key=True)
+    item_name = db.Column(db.String(128), unique=True, nullable=False)
+    item_cost = db.Column(db.Integer, unique=True, nullable=False)
+    total_budget = db.Column(db.Integer, unique=True, nullable=False)
+    avail_budget = db.Column(db.Integer, unique=True, nullable=False)
+
+
+class BudgetItemSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'item_name', 'item_cost', 'avail_budget', 'total_budget')
+
 
 # MARSHMALLOW SCHEMA INSTANCES
 budget_item_schema = BudgetItemSchema()
 budget_items_schema = BudgetItemSchema(many=True)    
 
-# ENDPOINTS
 
+# ENDPOINTS
 @app.route('/')
 def hello():
     return "Hello World!"
