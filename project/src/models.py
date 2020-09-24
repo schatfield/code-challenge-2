@@ -27,6 +27,4 @@ class BudgetItemSchema(ma.Schema):
     class Meta:
         fields = ('id', 'item_name', 'item_cost', 'avail_budget', 'total_budget')
 
-# MARSHMALLOW SCHEMA INSTANCES
-budget_item_schema = BudgetItemSchema()
-budget_items_schema = BudgetItemSchema(many=True)    
+
