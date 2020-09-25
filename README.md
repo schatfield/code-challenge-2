@@ -4,8 +4,8 @@ Challenge: Build a RESTful API with Flask framework and some other supporting to
 
 # How was this built?
 
-- Docker - Container for running your database in
 - Flask - Python framework
+- Docker - Container for running your database in
 - SqlAlchemy - ORM connects to your database (communicates between your Python and database)
 - Marshmallow - ORM, utilizing schemas for data serialization 
 
