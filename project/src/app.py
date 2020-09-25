@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask import Flask, request, jsonify
 import json
-from config import user, password, host, database ,port, DATABASE_CONNECTION_URI
+from config import DATABASE_CONNECTION_URI
 
 
 # CREATE APP
