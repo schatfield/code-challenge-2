@@ -6,4 +6,4 @@ SqlAlchemy
 
 
 # Entity Relationship Diagram
-![ERD]https://i.imgur.com/fAjYETy.png
+![ERD](https://i.imgur.com/fAjYETy.png)
