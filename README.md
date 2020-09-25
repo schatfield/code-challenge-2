@@ -4,17 +4,17 @@ Challenge: Build a RESTful API with Flask framework and some other supporting to
 
 # How was this built?
 
-Docker - Container for running your database in
-Flask - Python framework
-SqlAlchemy - ORM connects to your database (communicates between your Python and database)
-Marshmallow - ORM, utilizing schemas for data serialization 
+- Docker - Container for running your database in
+- Flask - Python framework
+- SqlAlchemy - ORM connects to your database (communicates between your Python and database)
+- Marshmallow - ORM, utilizing schemas for data serialization 
 
 # What can you do with this?
 
-GET: Get information about all Budget Items / get one Budget Item
-POST: Add a new Budget Item
-DELETE: Remove a Budget Item
-PATCH: Edit a Budget Item
+- GET: Get information about all Budget Items / get one Budget Item
+- POST: Add a new Budget Item
+- DELETE: Remove a Budget Item
+- PATCH: Edit a Budget Item
 
 # Want to run this app? Follow the instructions below:
 
